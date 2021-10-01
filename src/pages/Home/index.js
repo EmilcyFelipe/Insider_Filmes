@@ -20,6 +20,8 @@ import SliderItem from "../../components/SliderItem";
 import api, { key } from "../../services/api";
 import {getListMovies,randomBanner} from '../../../utils/movie'
 
+import {useNavigation} from '@react-navigation/native'
+
 export default function Home() {
   const [nowMovies, setNowMovies] = useState([]);
   const [popularMovies, setPopularMovies] = useState([]);
@@ -27,6 +29,8 @@ export default function Home() {
   const [bannerMovie, setBannerMovie] = useState({})
 
   const [loading,setLoading] = useState(true);
+
+  const navigation = useNavigation();
 
   useEffect(() => {
     let isActive = true;
@@ -87,6 +91,10 @@ export default function Home() {
     }
   }, []);
 
+  function navigateDetailsPage(item){
+    navigation.navigate('Detail',{id:item.id})
+  }
+
   if(loading){
     return(
       <Container>
@@ -108,7 +116,7 @@ export default function Home() {
       </SearchContainer>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Title>Em Cartaz</Title>
-        <BannerButton activeOpacity={0.9} onPress={() => alert("TESTE")}>
+        <BannerButton activeOpacity={0.9} onPress={()=> navigateDetailsPage(bannerMovie)}>
           <Banner
             resizeMethod="resize"
             source={{
@@ -120,7 +128,7 @@ export default function Home() {
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           data={nowMovies}
-          renderItem={({ item }) => <SliderItem data={item}/>}
+          renderItem={({ item }) => <SliderItem data={item} navigatePage={() => navigateDetailsPage(item)}/>}
           keyExtractor={(item)=>String(item.id)}
         />
 
@@ -129,7 +137,7 @@ export default function Home() {
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           data={popularMovies}
-          renderItem={({ item }) => <SliderItem data={item}/>}
+          renderItem={({ item }) => <SliderItem data={item} navigatePage={() => navigateDetailsPage(item)} />}
           keyExtractor={(item)=>String(item.id)}
         />
 
@@ -138,7 +146,7 @@ export default function Home() {
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           data={topMovies}
-          renderItem={({ item }) => <SliderItem data={item}/>}
+          renderItem={({ item }) => <SliderItem data={item} navigatePage={() => navigateDetailsPage(item)}/>}
           keyExtractor={(item)=>String(item.id)}
         />
       </ScrollView>
