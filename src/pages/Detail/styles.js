@@ -33,6 +33,52 @@ export const Banner = styled.Image`
 
 `;
 
-export const ButtonLink = styled.TouchableOpacit`
-
+export const ButtonLink = styled.TouchableOpacity`
+    background-color:#E72f49;
+    width: 63px;
+    height: 63px;
+    border-radius: 35px;
+    position: absolute;
+    right: 15px;
+    top: 300px;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
 `;
+
+export const Title = styled.Text`
+    color: #FFF;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 8px 14px;
+    margin-top: 8px;
+`;
+
+export const ContentArea = styled.View`
+    flex-direction: row;
+    padding: 0 14px;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const Rate = styled.Text`
+    color: #FFFF;
+    font-size: 18px;
+    font-weight: bold;
+`;
+
+export const ListGenres = styled.FlatList`
+    padding-left: 14px;
+    margin: 8px 0;
+    max-height: 35px ;
+    min-height: 35px;
+`;
+
+export const Description = styled.Text`
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-bottom: 30px;
+    color:#FFF;
+    line-height: 20px;
+`;
+
