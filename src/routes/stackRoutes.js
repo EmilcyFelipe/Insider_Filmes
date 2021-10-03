@@ -1,30 +1,45 @@
-import React from 'react'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Home from '../pages/Home';
-import Detail from '../pages/Detail'
+import React from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Home from "../pages/Home";
+import Detail from "../pages/Detail";
+import Search from '../pages/Search'
 
 const Stack = createNativeStackNavigator();
 
-export default function StackRoutes(){
-    return(
-        <Stack.Navigator>
-            <Stack.Screen 
-            name="Home" 
-            component={Home}
-            options={{
-                headerShown:false
+export default function StackRoutes() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{
+          headerShown: false,
+        }}
+      />
 
-            }}
-            />
-
-        <Stack.Screen 
+      <Stack.Screen
         name="Detail"
         component={Detail}
         options={{
-            headerShown:false
+          headerShown: false,
+          title:'Detalhes'
         }}
-        />
-        </Stack.Navigator>
+      />
 
-    );
+      <Stack.Screen
+        name="Search"
+        component={Search}
+        options={{
+          title:'Sua busca',
+          headerTintColor:"#FFF",
+          headerTitleStyle:{
+            color: "#FFF"
+          },
+          headerStyle:{
+              backgroundColor:'#141A29'
+          }
+        }}
+      />
+    </Stack.Navigator>
+  );
 }

@@ -45,7 +45,6 @@ export default function Detail(){
 
             if(isActive){
                 setMovie(response.data);
-                console.log(response.data)
             }
         }
         if(isActive){

@@ -19,6 +19,7 @@ export const Header = styled.View`
 export const HeaderButton = styled.TouchableOpacity`
     width: 46px;
     height: 46px;
+    margin-top: 20px;
     background-color: rgba(25,26,48,.6);
     border-radius: 23px;
     justify-content: center;
