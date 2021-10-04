@@ -27,10 +27,10 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Screenshot](https://github.com/EmilcyFelipe/Insider_Filmes/blob/master/screenshot.png)
 
 ## My process
-In Construction...
+In this project it was made using of a lot of technologies, like styled components, navigation, icons, api consume. It was a simple application, but very complete and useful to learn and be closer to react native.
 
 ### Built with
 
