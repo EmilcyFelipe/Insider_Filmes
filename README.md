@@ -44,7 +44,7 @@ The event purpose is initialize react native on development of applications to I
 
 ### Useful resources
 
-- [Example resource 1](https://www.themoviedb.org/?language=pt-BR) - This helped me for get the API of movies to use on the project as a data resource.
+- [The movie data base](https://www.themoviedb.org/?language=pt-BR) - This helped me for get the API of movies to use on the project as a data resource.
 
 ## Author
 
